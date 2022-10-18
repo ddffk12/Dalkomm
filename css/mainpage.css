@@ -64,7 +64,7 @@ header > .nav {
 }
 
 header > .nav > li {
-    padding: 0 44px;
+    padding: 0;
     position: relative;
 }
 
@@ -740,7 +740,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     }
     
     header > .nav > li {
-        padding: 0 44px;
+        padding: 0;
         position: relative;
         display: none;
     }
@@ -841,7 +841,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     }
     
     header > .nav > li {
-        padding: 0 44px;
+        padding: 0;
         position: relative;
     }
 
