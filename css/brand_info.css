@@ -65,7 +65,7 @@ header > .nav {
 }
 
 header > .nav > li {
-    padding: 0 44px;
+    padding-left: 44px;
     position: relative;
 }
 
@@ -690,7 +690,7 @@ header > .nav {
 }
 
 header > .nav > li {
-    padding: 0 44px;
+    padding-left: 44px;
     position: relative;
     display: none;
 }
@@ -1974,7 +1974,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     }
     
     header > .nav > li {
-        padding: 0 44px;
+        padding-left: 44px;
         position: relative;
     }
 
