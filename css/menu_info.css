@@ -219,6 +219,10 @@ main .menu li:nth-child(9) {
     margin-left: 0;
 }
 
+main .menu li:nth-child(13) {
+    margin-left: 0;
+}
+
 main .menu li > p {
     width: 100%;
 }
