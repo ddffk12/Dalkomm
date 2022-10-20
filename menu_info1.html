@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:url"                content="https://ddffk12.github.io/Dalkomm/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="그린컴퓨터아카데미" />
+    <meta property="og:description"        content="컴퓨터에 관련된 모든 과정학습!!" />
+    <meta property="og:image"              content="./img/3page_image01.png" />
+
+    <meta property="twitter:url"                content="https://ddffk12.github.io/Dalkomm/" />
+    <meta property="twitter:card"               content="summary" />
+    <meta property="twitter:site"               content="사이트명" />
+    <meta property="twitter:title"              content="개발자 과정" />
+    <meta property="twitter:description"        content="개발자를 위한 품격있는 블로그" />
+    <meta property="twitter:image"              content="./img/3page_image01.png" />
+
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" href="./css/menu_info.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p><a href="./index.html"><img src="./img/logo.svg" alt=""></a></p>
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="nav">
+            <li>
+                <a href="./brand_info.html">Dal.Komm</a>
+                <ul>
+                    <li><a href="./brand_info.html">브랜드이야기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="./menu_info.html">메뉴 · 매장</a>
+                <ul>
+                    <li><a href="./menu_info.html">메뉴</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <script>
+        const elnav = document.querySelector('header .nav');
+        const elbtn = document.querySelector('header div button');
+
+        elbtn.addEventListener('click',function(){
+            elnav.classList.toggle('active');
+            elbtn.classList.toggle('active');
+        });
+
+    </script>
+
+    <main>
+        <ul class="bar">
+            <li><a href="./index.html">홈</a></li>
+            <li><a href="./menu_info.html">· 메뉴 · 매장</a></li>
+            <li>·· 메뉴</li>
+        </ul>
+        <ul class="menubar">
+            <li><a href="./menu_info.html">Season</a><sup>5</sup></li>
+            <li><a href="#">Signature</a><sup>9</sup></li>
+            <li><a href="#">Coffee</a><sup>22</sup></li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <p><img src="./img/menu/spe_01.png" alt=""></p>
+                <div class="name">
+                    <p>보늬밤 라떼</p>
+                    <p>Both</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="./img/menu/spe_02.png" alt=""></p>
+                <div class="name">
+                    <p>가을밤 슈페너 w액상커피</p>
+                    <p>Ice</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="./img/menu/spe_03.png" alt=""></p>
+                <div class="name">
+                    <p>가을밤 블렌디드</p>
+                    <p>Ice</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="./img/menu/spe_04.png" alt=""></p>
+                <div class="name">
+                    <p>가을사과 티</p>
+                    <p>Hot</p>
+                </div>
+            </li>
+            <li>
+                <p><img src="./img/menu/spe_05.png" alt=""></p>
+                <div class="name">
+                    <p>가을사과 에이드</p>
+                    <p>Ice</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="top_ft">
+            <p><img src="./img/logo.svg" alt=""></p>
+            <ul>
+                <li>
+                    <strong>고객을 위한 달콤</strong>
+                    <ul class="txt">
+                        <li class="import"><a href="https://www.dalkomm.com/customerCS">문의하기 (Contact Us)</a></li>
+                        <li class="txt_nav"><a href="#">고객상담센터 1661-1399</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>파트너를 위한 달콤</strong>
+                    <ul class="txt">
+                        <li><a href="https://www.dalkomm.com/partnerCS">협력업체 문의</a></li>
+                        <li class="txt_nav"><a href="https://www.dalkomm.com/franchiseeCS">가맹 문의</a></li>
+                        <li class="txt_nav"><a href="https://www.dalkomm.com/marketingCS">제휴*마케팅 문의</a></li>
+                        <li class="txt_nav"><a href="#">브랜드소개서</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>개인정보 보호 및 약관</strong>
+                    <ul class="txt">
+                        <li><a href="https://www.dalkomm.com/privacy">개인정보 처리방침</a></li>
+                        <li class="txt_nav"><a href="https://www.dalkomm.com/serviceTerms">서비스 이용약관</a></li>
+                        <li class="txt_nav"><a href="https://www.dalkomm.com/locationTerms">위치기반서비스 이용약관</a></li>
+                        <li class="txt_nav"><a href="https://www.dalkomm.com/videoTerms">영상정보처리기기 운영&관리 방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom_ft">
+            <div class="other_site">
+                <p>FAMILY SITE</p>
+                <p><img src="./img/footer_select-plus.svg" alt=""></p>
+            </div>
+            <div class="info">
+                <p>
+                    <b>주)다날에프엔비+</b>주소지: 경기도 성남시 분당구 황새울로 359번길 7, 한국정보공학 3층
+                    <br>대표이사:박경철|사업자등록번호: 144-81-09353|통신판매업신고: 제 2016-성남분당-0680호
+                    <br>Copyrightⓒ2022(주)달콤 All Rights Reserved.
+                </p>
+                <ul class="logo_ft">
+                    <li>
+                        <a href="https://apps.apple.com/kr/app/%EB%8B%AC%EC%BD%A4%EC%BB%A4%ED%94%BC/id1097036744">
+                            <i><img src="./img/footer_apple.svg" alt=""></i>
+                            App Store
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://play.google.com/store/search?q=%EB%8B%AC%EC%BD%A4%EC%BB%A4%ED%94%BC&c=apps">
+                            <i><img src="./img/footer_google.svg" alt=""></i>
+                            Google Play
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.dalkomm.com/appIntro"><img src="./img/footer_QR.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

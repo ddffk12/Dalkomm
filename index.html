@@ -25,21 +25,35 @@
 </head>
 <body>
     <header>
-        <p><a href="./index.html"><img src="./img/logo.svg" alt=""></a></p>
-        <button>
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div>
+            <p><a href="./index.html"><img src="./img/logo.svg" alt=""></a></p>
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
         <ul class="nav">
             <li>
-                <a href="https://www.dalkomm.com/brandIntro">Dal.Komm</a>
+                <a href="./brand_info.html">Dal.Komm</a>
                 <ul>
                     <li><a href="./brand_info.html">브랜드이야기</a></li>
                 </ul>
             </li>
         </ul>
     </header>
+
+    <script>
+        const elnav = document.querySelector('header .nav');
+        const elbtn = document.querySelector('header div button');
+
+        elbtn.addEventListener('click',function(){
+            elnav.classList.toggle('active');
+            elbtn.classList.toggle('active');
+        });
+
+    </script>
+
     <main>
         <ul>
             <li class="first">
