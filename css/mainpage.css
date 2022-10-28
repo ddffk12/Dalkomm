@@ -90,7 +90,7 @@ header > .nav > li > ul > li > a {
 }
 
 
-header > .nav > li > a + ul {
+header > .nav > li > ul {
     position: absolute;
     visibility: hidden;
 }
@@ -101,7 +101,7 @@ header > .nav > li:hover > a {
     transition: 0.5s;
 }
 
-header > .nav:hover > li > ul {
+header > .nav > li:hover > ul {
     transform: translate(0, 20px);
     visibility: visible;
     transition: 0.5s;
@@ -121,27 +121,28 @@ main {
     background-color:#fbf4e4;
 }
 
-main > ul {
+main > .fade {
     width: 100%;
 }
 
-main > ul > .first {
+main > .fade > .first {
     width: 100%;
+    height: 110vh;
     position: relative;
-    
 }
 
-main > ul > .first > .image {
+main > .fade > .first > figure {
     width: 100%;
-    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-
-main > ul > .first > .image > img {
+main > .fade > .first > figure > img {
     width: 100%;
 }
 
-main > ul > .first > .mentbox {
+main > .fade > .first > figure > .mentbox {
     width: 1440px;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     text-align: left;
@@ -151,14 +152,14 @@ main > ul > .first > .mentbox {
     transform: translateX(-50%);
 }
 
-main > ul > .first > .mentbox > .ment {
+main > .fade > .first > figure > .mentbox > p {
     width: 1440px;
     font-size: 50px;
     font-weight: bold;
     color: rgb(255, 89, 46);
 }
 
-main > ul > .first > .mentbox  > a {
+main > .fade > .first > figure > .mentbox > a {
     display: inline-block;
     text-align: center;
     font-weight: bold;
@@ -169,12 +170,33 @@ main > ul > .first > .mentbox  > a {
     font-size: 16px;
 }
 
+main > .fade > .first > .fade-btn {
+    position: absolute;
+    left: 48%;
+    bottom: 0%;
+    z-index: 1;
+}
+
+main > .fade > .first > .fade-btn > button {
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    border-color: transparent;
+}
+
+main > .fade > .first > .fade-btn > button:hover {
+    background-color: rgb(255, 89, 46);
+}
+
 main .second {
     height: 1080px;
     position: relative;
     overflow: hidden;
     text-align: center;
     z-index: 2;
+
 }
 
 main .second p:nth-of-type(1) {
@@ -790,23 +812,14 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         position: relative;
         display: block;
     }
+
+    header > .nav > li:nth-of-type(2) {
+        margin-top: 100px;
+    }
     
     header > .nav > li > a {
         font-size: 30px;
         color: black;
-    }
-
-    header > .nav > li > a::after {
-        content: '';
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        margin-top: -10px;
-        display: block;
-        content: '';
-        width: 20px;
-        height: 20px;
-        background: url(../img/ic_arrow_down.svg) no-repeat 50% 50%;
     }
     
     header > .nav > li > ul > li > a {
@@ -824,11 +837,11 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         color: orange;
     }
     
-    header > .nav:hover > li > ul {
+    /* header > .nav:hover > li > ul {
         font-size: 14px;
         transform: translate(0, 20px);
         visibility: visible;
-    }
+    } */
     
     header > .nav > li > ul > li:hover > a {
         color: orange;
@@ -932,11 +945,11 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         transition: 0.5s;
     }
     
-    header > .nav:hover > li > ul {
+    /* header > .nav:hover > li > ul {
         transform: translate(0, 20px);
         visibility: visible;
         transition: 0.5s;
-    }
+    } */
     
     header > .nav > li > ul > li:hover > a {
         color: orange;
@@ -960,57 +973,78 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         background-color:#fbf4e4;
     }
     
-    main > ul {
-        width: 100%;
-    }
-    
-    main > ul > .first {
-        width: 100%;
-        position: relative;
+        main > .fade {
+            width: 100%;
+        }
+
+        main > .fade > .first {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        main > .fade > .first > figure {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        main > .fade > .first > figure > img {
+            width: 100%;
+            height: 100%;
+        }
+
+        main > .fade > .first > figure > .mentbox {
+            width: 100%;
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+            text-align: left;
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 16px;
+        }
+
+        main > .fade > .first > figure > .mentbox > p {
+            width: 100%;
+            font-size: 3.7778vw;
+            font-weight: bold;
+            color: rgb(255, 89, 46);
+        }
+
+        main > .fade > .first > figure > .mentbox > a {
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid rgb(255, 89, 46);
+            color: rgb(255, 89, 46);
+            margin-top: 24px;
+            padding: 10px 28px;
+            font-size: 2.1111vw;
+        }
+
+        main > .fade > .first > .fade-btn {
+            position: absolute;
+            left: 44%;
+            bottom: 8%;
+            vertical-align: middle;
+            z-index: 1;
+        }
         
-    }
-    
-    main > ul > .first > .image {
-        width: 100%;
-        height: 850px;
-    }
-    
-    
-    main > ul > .first > .image > img {
-        width: 100%;
-        height: 100%;
-    }
-    
-    main > ul > .first > .mentbox {
-        width: 100%;
-        text-align: left;
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-left: 16px;
-        word-break: keep-all;
-    }
-    
-    main > ul > .first > .mentbox > .ment {
-        width: 100%;
-        font-size: 7vw;
-        max-width: 70.667vw;
-        font-weight: bold;
-        word-break: keep-all;
-        color: rgb(255, 89, 46);
-    }
-    
-    main > ul > .first > .mentbox >  a {
-        display: inline-block;
-        text-align: center;
-        font-weight: bold;
-        border: 1px solid rgb(255, 89, 46);
-        color: rgb(255, 89, 46);
-        margin-top: 24px;
-        padding: 10px 28px;
-        font-size: 16px;
-    }
+        main > .fade > .first > .fade-btn > button {
+            width: 15px;
+            height: 15px;
+            margin: 0 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 100%;
+            border-color: transparent;
+        }
+        
+        main > .fade > .first > .fade-btn > button:hover {
+            background-color: rgb(255, 89, 46);
+        }
 
     main .second {
         height: 1080px;
@@ -1603,28 +1637,31 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         background-color:#fbf4e4;
     }
 
-    main > ul {
+    main > .fade {
         width: 100%;
     }
-    
-    main > ul > .first {
+
+    main > .fade > .first {
         width: 100%;
+        height: 90vh;
         position: relative;
-        
     }
-    
-    main > ul > .first > .image {
+
+    main > .fade > .first > figure {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    main > .fade > .first > figure > img {
         width: 100%;
         height: 100%;
     }
-    
-    
-    main > ul > .first > .image > img {
-        width: 100%;
-        height: 100%;
-    }
-    
-    main > ul > .first > .mentbox {
+
+    main > .fade > .first > figure > .mentbox {
+        font-family: 'Spoqa Han Sans Neo', 'sans-serif';
         width: 100%;
         text-align: left;
         position: absolute;
@@ -1634,8 +1671,8 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         padding-left: 16px;
         word-break: keep-all;
     }
-    
-    main > ul > .first > .mentbox > .ment {
+
+    main > .fade > .first > figure > .mentbox > p {
         width: 100%;
         font-size: 2.813vw;
         max-width: 70.667vw;
@@ -1643,8 +1680,8 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         word-break: keep-all;
         color: rgb(255, 89, 46);
     }
-    
-    main > ul > .first > .mentbox >  a {
+
+    main > .fade > .first > figure > .mentbox > a {
         display: inline-block;
         text-align: center;
         font-weight: bold;
@@ -1653,6 +1690,26 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         margin-top: 2.708vw;
         padding: 1.042vw 2.083vw;
         font-size: 1.250vw;
+    }
+
+    main > .fade > .first > .fade-btn {
+        position: absolute;
+        left: 46%;
+        bottom: 8%;
+        z-index: 1;
+    }
+    
+    main > .fade > .first > .fade-btn > button {
+        width: 15px;
+        height: 15px;
+        margin: 0 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 100%;
+        border-color: transparent;
+    }
+    
+    main > .fade > .first > .fade-btn > button:hover {
+        background-color: rgb(255, 89, 46);
     }
     
     main .second {

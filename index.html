@@ -22,6 +22,8 @@
     <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link rel="stylesheet" href="./css/mainpage.css">
+    <script defer src="./javascript/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -49,41 +51,39 @@
         </ul>
     </header>
 
-    <script>
-        const elnav = document.querySelector('header .nav');
-        const elbtn = document.querySelector('header div button');
-
-        elbtn.addEventListener('click',function(){
-            elnav.classList.toggle('active');
-            elbtn.classList.toggle('active');
-        });
-
-    </script>
-
     <main>
-        <ul>
-            <li class="first">
-                <p class="image"><img src="./img/img01.jpg" alt=""></p>
-                <div class="mentbox">
-                    <p class="ment">Special Gift Set<br>고마움을 전하는 기쁨</p>
-                    <a href="#">자세히 보기</a>
+        <div class="fade">
+            <div class="first">
+                <figure>
+                    <img src="./img/img01.jpg" alt="">
+                    <div class="mentbox">
+                        <p>Special Gift Set<br>고마움을 전하는 기쁨</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </figure>
+                <figure>
+                    <img src="./img/img02.jpg" alt="">
+                    <div class="mentbox">
+                        <p>가을 신메뉴 출시!<br>가을 밤 사과같이 둥근 달</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </figure>
+                <figure>
+                        <img src="./img/img03.jpg" alt="">
+                        <div class="mentbox">
+                            <p>테이블오더로 주문하고 공연보러 가자!<br>전세계가 열광한 푸에르자 부르타 공연</p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                </figure>
+                
+                <div class="fade-btn">
+                    <button></button>
+                    <button></button>
+                    <button></button>
                 </div>
-            </li>
-            <li class="first">
-                <p class="image"><img src="./img/img02.jpg" alt=""></p>
-                <div class="mentbox">
-                    <p class="ment">가을 신메뉴 출시!<br>가을 밤 사과같이 둥근 달</p>
-                    <a href="#">자세히 보기</a>
-                </div>
-            </li>
-            <li class="first">
-                <p class="image"><img src="./img/img03.jpg" alt=""></p>
-                <div class="mentbox">
-                    <p class="ment">테이블오더로 주문하고 공연보러 가자!<br>전세계가 열광한 푸에르자 부르타 공연</p>
-                    <a href="#">자세히 보기</a>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
+
         <div class="second">
             <p><img src="./img/2page_image01.png" alt=""></p>
             <p><img src="./img/2page_image02.png" alt=""></p>
