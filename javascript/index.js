@@ -15,19 +15,21 @@ let num = 0, inter, fadeFun;
 $('.first figure').not(':first').hide();
 fadeFun = function(param){
     $('.first figure').eq(num).fadeOut(1000);
+    num++;
     if(param == '처음') {
         $('.first figure').eq(0).fadeIn(1000);
     }
     else if(param == '가운데') {
         $('.first figure').eq(1).fadeIn(1000);
     }
-    else {
+    else if(param == '마지막') {
         $('.first figure').eq(2).fadeIn(1000);
     }
-    num++;
-    $('.first figure').eq(num).fadeIn(1000);
-    if(num == 3) {
+    else if(num == 3) {
         num = 0;
+        $('.first figure').eq(num).fadeIn(1000);
+    }
+    else {
         $('.first figure').eq(num).fadeIn(1000);
     }
 }
@@ -54,4 +56,7 @@ $('.fade-btn button').on('click', function(){
         fadeFun('마지막');
     }
 });
+
+/* ===================second================== */
+
 
