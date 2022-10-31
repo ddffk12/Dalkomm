@@ -59,4 +59,9 @@ $('.fade-btn button').on('click', function(){
 
 /* ===================second================== */
 
-
+function loading(){
+    const elSecondP = document.querySelectorAll('.second p');
+    elSecondP[0].addEventListener('scroll',function(){
+        
+    })
+}
