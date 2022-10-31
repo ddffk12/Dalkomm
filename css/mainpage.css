@@ -215,7 +215,7 @@ main .second p.active {
 
 main .second div {
     opacity: 0;
-    transform: translateY(10%);
+    transform: translateY(50%);
     transition: 0.5s;
 }
 
@@ -248,7 +248,7 @@ main .second p:nth-of-type(3) {
     position: absolute;
     z-index: -1;
     top:750px;
-    right: 350px;
+    right: 300px;
 }
 
 main .second p:nth-of-type(1) img {
@@ -310,13 +310,26 @@ main .third > p {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 50px;
 }
-
+/* ==스크립트 추가== */
 main .third > ul {
     width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: 0.5s ease-in-out;
+}
+
+main .third > ul.active {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 main .third > ul > li {
@@ -418,8 +431,17 @@ main .fifth {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
-main .fifth .txt {
+/* =====스크립트 추가===== */
 
+main .fifth .txt {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 0.5s;
+}
+
+main .fifth .txt.active {
+    opacity: 1;
+    transform: translateY(0%);
 }
 
 main .fifth .txt > h1 {
@@ -860,12 +882,13 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     
     header > .nav > li:hover > a {
         color: orange;
+        transition: 0.5s;
     }
     
-    header > .nav:hover > li > ul {
-        font-size: 14px;
-        transform: translate(0, 40px);
+    header > .nav > li:hover > ul {
+        transform: translate(0, 50px);
         visibility: visible;
+        transition: 0.5s;
     }
     
     header > .nav > li > ul > li:hover > a {
@@ -874,7 +897,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     
     header > .nav > li > a + ul > li {
         width: 120%;
-        margin: 10px 0;
+        margin: 0;
     }
     }
 

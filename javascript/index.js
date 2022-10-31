@@ -61,7 +61,105 @@ $('.fade-btn button').on('click', function(){
 
 function loading(){
     const elSecondP = document.querySelectorAll('.second p');
-    elSecondP[0].addEventListener('scroll',function(){
-        
+    const elSeconddiv = document.querySelectorAll('.second div')
+    const elSecond = document.querySelector('.second');
+    let sd = {y:0, y2:0, state:true}
+    let offset = [];
+    let offset2 = [];
+
+    elSecondP.forEach((ele)=>{
+        offset.push((ele.offsetTop + elSecond.offsetTop) - window.innerHeight * 0.9);
+    })
+    elSeconddiv.forEach((ele)=>{
+        offset2.push((ele.offsetTop + elSecond.offsetTop) - window.innerHeight * 0.9);
+    })
+
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset     
+        sd.state = (sd.y > sd.y2) ?  true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            console.log(window.pageYOffset);
+            elSecondP.forEach((ele,idx)=>{
+                if(window.pageYOffset > offset[idx]){
+                    elSecondP[idx].classList.add('active');
+                }
+            })
+            elSeconddiv.forEach((ele,idx)=>{
+                if(window.pageYOffset > offset2[idx]){
+                    elSeconddiv[idx].classList.add('active');
+                }
+            })
+        }
+        else{
+            elSecondP.forEach((ele,idx)=>{
+                if(window.pageYOffset < offset[idx]){
+                    elSecondP[idx].classList.remove('active');
+                }
+            })
+            elSeconddiv.forEach((ele,idx)=>{
+                if(window.pageYOffset < offset2[idx]){
+                    elSeconddiv[idx].classList.remove('active');
+                }
+            })
+        }
     })
 }
+window.addEventListener('load',loading);
+
+/* =================third================= */
+
+function Third() {
+    const elThirdUl = document.querySelector('.third ul');
+    let sd = {y:0, y2:0, state:true}
+    let offset3;
+
+    offset3 = elThirdUl.offsetTop - window.innerHeight * 0.9;
+
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset     
+        sd.state = (sd.y > sd.y2) ?  true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            if(window.pageYOffset > offset3) {
+                elThirdUl.classList.add('active')
+            }
+        }
+        else {
+            if(window.pageYOffset < offset3) {
+                elThirdUl.classList.remove('active')
+            }
+        }
+    })
+}
+window.addEventListener('load', Third)
+
+/* forth */
+
+/* ==============fifth============ */
+
+function Fifth() {
+    const elFifthtxt = document.querySelector('.fifth .txt');
+    let sd = {y:0, y2:0, state:true}
+    let offset4;
+    
+    offset4 = elFifthtxt.offsetTop - window.innerHeight * 0.9;
+    
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset
+        sd.state = (sd.y > sd.y2) ? true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            if(window.pageYOffset > offset4) {
+                elFifthtxt.classList.add('active')
+            }
+        }
+        else {
+            if(window.pageYOffset < offset4) {
+                elFifthtxt.classList.remove('active')
+            }
+        }
+    })
+}
+
+window.addEventListener('load',Fifth);
