@@ -9,6 +9,29 @@ elbtn.addEventListener('click',function(){
     elNav.classList.toggle('active');
 });
 
+function Header() {
+    const elHeader = document.querySelector('header');
+    let sd = {y:0, y2:0, state:true}
+
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset;
+        sd.state = (sd.y > sd.y2) ? true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            if(window.pageYOffset > 0) {
+                elHeader.classList.add('active')
+            }
+        }
+        else {
+            if(window.pageYOffset < 100000) {
+                elHeader.classList.remove('active')
+            }
+        }
+    });
+}
+
+window.addEventListener('load',Header);
+
 /* ====================first==================== */
 
 let num = 0, inter, fadeFun;
@@ -79,7 +102,6 @@ function loading(){
         sd.state = (sd.y > sd.y2) ?  true : false;
         sd.y2 = sd.y;
         if(sd.state) {
-            console.log(window.pageYOffset);
             elSecondP.forEach((ele,idx)=>{
                 if(window.pageYOffset > offset[idx]){
                     elSecondP[idx].classList.add('active');
@@ -163,3 +185,39 @@ function Fifth() {
 }
 
 window.addEventListener('load',Fifth);
+
+
+/* =============sixth================ */
+
+function Sixth() {
+    const elSixth = document.querySelector('.sixth');
+    const elP = document.querySelectorAll('.sixth .txt p');
+    let sd = {y:0, y2:0, state:true}
+    let offset5 = [];
+
+    elP.forEach((ele)=>{
+        offset5.push((ele.offsetTop + elSixth.offsetTop) - window.innerHeight * 0.9);
+    })
+    
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset;
+        sd.state = (sd.y > sd.y2) ? true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            elP.forEach((ele,idx)=>{
+                if(window.pageYOffset > offset5[idx]){
+                    elP[idx].classList.add('active');
+                }
+            })
+        }
+        else {
+            elP.forEach((ele,idx)=>{
+                if(window.pageYOffset < offset5[idx]){
+                    elP[idx].classList.remove('active');
+                }
+            })
+        }
+    });
+}
+
+window.addEventListener('load',Sixth);

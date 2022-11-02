@@ -1,5 +1,6 @@
 @import url(./common.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 body {
     font-family:'Spoqa Han Sans Neo', 'sans-serif';
 }
@@ -8,7 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1440px;
+    width: 100%;  /* <<<<<<<<<<??????????? */
     z-index: 99999999999999;
     position: fixed;
     left: 50%;
@@ -36,7 +37,7 @@ header > div > button > span {
     width: 100%;
     height: 2px;
     background-color: #000;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 header > div > button > span:nth-of-type(1) {
@@ -53,7 +54,7 @@ header > div > button > span:nth-of-type(3) {
 
 header > div > button.active > span:nth-of-type(1) {
     top: 50%;
-    transform: rotate(45deg);
+    transform: rotate(135deg);
 }
 
 header > div > button.active > span:nth-of-type(2) {
@@ -63,7 +64,7 @@ header > div > button.active > span:nth-of-type(2) {
 
 header > div > button.active > span:nth-of-type(3) {
     top: 50%;
-    transform: rotate(-45deg);
+    transform: rotate(-135deg);
 }
 
 
@@ -78,8 +79,11 @@ header > .nav {
 }
 
 header > .nav > li {
+    height: 50px;
     padding: 0 44px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 header > .nav > li > a {
@@ -88,10 +92,11 @@ header > .nav > li > a {
 
 header > .nav > li > ul > li > a {
     color: black;
+    padding-right: 50px;
 }
 
 
-header > .nav > li > a + ul {
+header > .nav > li > ul {
     position: absolute;
     visibility: hidden;
 }
@@ -102,8 +107,8 @@ header > .nav > li:hover > a {
     transition: 0.5s;
 }
 
-header > .nav:hover > li > ul {
-    transform: translate(0, 20px);
+header > .nav > li:hover > ul {
+    transform: translate(0, 50px);
     visibility: visible;
     transition: 0.5s;
 }
@@ -135,6 +140,14 @@ main .bar {
     padding: 0 76px;
     display: flex;
     justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(-300%);
+    transition: 1s;
+}
+
+main .bar.active {
+    opacity: 1;
+    transform: translateY(0%);
 }
 
 main .bar > li {
@@ -217,6 +230,12 @@ main .second {
     padding-top: 160px;
     text-align: center;
     margin: 0 auto;
+    opacity: 0;
+    transition: 1s;
+}
+
+main .second.active {
+    opacity: 1;
 }
 
 main .second > h1 {
@@ -256,7 +275,18 @@ main .third {
     margin: 0 auto;
 }
 
-main .third > h1 {
+main .third section {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 0.5s;
+}
+
+main .third section.active {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+main .third h1 {
     font-size: 64px;
 }
 
@@ -418,6 +448,15 @@ main .forth {
 
 main .forth > h1 {
     font-size: 64px;
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 0.5s;
+}
+
+main .forth > h1.active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 0.5s;
 }
 
 main .forth > ul {
@@ -430,6 +469,17 @@ main .forth > ul {
     "special bakery bakery bakery"
     "special goods goods goods"
     "music music character character";
+}
+
+main .forth li {
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 0.5s;
+}
+
+main .forth li.active {
+    opacity: 1;
+    transform: translateY(0%);
 }
 
 main .forth > ul > li:nth-of-type(1) {
@@ -679,18 +729,19 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         display: block;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+    }
+
+    header > div {
         width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 15px 0;
         z-index: 99999999999999;
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    header > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
     
     header > div > button {
@@ -701,27 +752,31 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     header > .nav {
         height: 120px;
         display: flex;
+        left: 0px;
+        top: 56px;
         justify-content: space-between;
         align-items: center;
         font-size: 100%;
         font-weight: bold;
+        opacity: 0;
         transform: translateX(100%);
-        transition: 0.5s;
     }
 /* =======추가======== */
     header > .nav.active {
-        width: 110%;
+        width: 100%;
         height: calc(100% - 56px);
         min-height: calc(100vh - 56px);
         padding-top: 50px;
         position: fixed;
-        left: -20px;
+        left: 0px;
         top: 56px;
-        display: flex;
+        opacity: 1;
+        display: block;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         background-color: white;
         transform: translateX(0%);
+        transition: transform 300ms ease-in-out;
     }
     
     header > .nav > li {
@@ -729,6 +784,10 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         padding: 0 44px;
         position: relative;
         display: block;
+    }
+
+    header > .nav > li:nth-of-type(2) {
+        margin-top: 100px;
     }
     
     header > .nav > li > a {
@@ -749,12 +808,13 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     
     header > .nav > li:hover > a {
         color: orange;
+        transition: 0.5s;
     }
     
-    header > .nav:hover > li > ul {
-        font-size: 14px;
-        transform: translate(0, 20px);
+    header > .nav > li:hover > ul {
+        transform: translate(0, 50px);
         visibility: visible;
+        transition: 0.5s;
     }
     
     header > .nav > li > ul > li:hover > a {
@@ -763,7 +823,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     
     header > .nav > li > a + ul > li {
         width: 120%;
-        margin: 10px 0;
+        margin: 0;
     }
     }
 
@@ -1969,9 +2029,24 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
+        transition: 0.5s;
+    }
+
+    header.active {
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0px;
+        z-index: 99999999999999;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
     }
     
-    header > button {
+    header > div > button {
         display: none;
         position: relative;
         width: 30px;
@@ -1980,7 +2055,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         background: none;
     }
     
-    header > button > span {
+    header > div > button > span {
         position: absolute;
         left: 0;
         width: 100%;
@@ -1988,15 +2063,15 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         background-color: #000;
     }
     
-    header > button > span:nth-of-type(1) {
+    header > div > button > span:nth-of-type(1) {
         top: 0%;
     }
     
-    header > button > span:nth-of-type(2) {
+    header > div > button > span:nth-of-type(2) {
         top: 50%;
     }
     
-    header > button > span:nth-of-type(3) {
+    header > div > button > span:nth-of-type(3) {
         top: 100%;
     }
     
@@ -2042,11 +2117,11 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         transition: 0.5s;
     }
     
-    header > .nav:hover > li > ul {
+    /* header > .nav:hover > li > ul {
         transform: translate(0, 20px);
         visibility: visible;
         transition: 0.5s;
-    }
+    } */
     
     header > .nav > li > ul > li:hover > a {
         color: orange;
@@ -2069,7 +2144,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         width: 100%;
         margin: 0;
         margin-top: 100px;
-        padding: 0;
+        padding: 0 60px;
         display: flex;
         justify-content: flex-end;
     }

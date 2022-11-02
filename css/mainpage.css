@@ -2,12 +2,11 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1440px;
+    width: 100%;
     z-index: 99999999999999;
     position: fixed;
     left: 50%;
@@ -317,19 +316,6 @@ main .third > ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transform: translateY(-10%);
-    transition: 0.5s ease-in-out;
-}
-
-main .third > ul.active {
-    width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 main .third > ul > li {
@@ -563,15 +549,37 @@ main .sixth .txt {
     color: rgb(255, 89, 46);
 }
 
-main .sixth .txt > h1 {
+main .sixth .txt > p:nth-of-type(1) {
     font-size: 64px;
     font-weight: bold;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 0.5s;
 }
 
-main .sixth .txt > p {
+main .sixth .txt > p:nth-of-type(1).active {
+    font-size: 64px;
+    font-weight: bold;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+
+main .sixth .txt > p:nth-of-type(2) {
     margin-top: 32px;
     font-size: 20px;
     font-weight: bold;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 0.5s;
+}
+
+main .sixth .txt > p:nth-of-type(2).active {
+    margin-top: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+    transform: translateY(0%);
 }
 
 main .sixth .txt > div {
@@ -920,6 +928,21 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
+        transition: 0.5s;
+    }
+
+    header.active {
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0px;
+        z-index: 99999999999999;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
     }
     
     header > div > button {
@@ -1439,12 +1462,12 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         word-break: keep-all;
     }
     
-    main .sixth .txt > h1 {
+    main .sixth .txt > p:nth-of-type(1) {
         font-size: 9.600vw;
         font-weight: bold;
     }
     
-    main .sixth .txt > p {
+    main .sixth .txt > p:nth-of-type(2) {
         margin-top: 4.267vw;
         font-size: 4.800vw;
         font-weight: 500;
@@ -1535,7 +1558,8 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     }
     
     footer .top_ft > ul > li {
-        
+        position: relative;
+        margin: 50px 0;
     }
     
     footer .top_ft > ul > li > strong {
@@ -2113,12 +2137,12 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
         white-space: pre-line;
     }
     
-    main .sixth .txt > h1 {
+    main .sixth .txt > p:nth-of-type(1) {
         font-size: 4.969vw;
         font-weight: bold;
     }
     
-    main .sixth .txt > p {
+    main .sixth .txt > p:nth-of-type(2) {
         margin-top: 4.267vw;
         font-size: 2.5111vw;
         font-weight: 500;
