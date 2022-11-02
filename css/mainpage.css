@@ -1558,7 +1558,6 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     }
     
     footer .top_ft > ul > li {
-        position: relative;
         margin: 50px 0;
     }
     
@@ -1569,6 +1568,7 @@ footer .bottom_ft .info .logo_ft > li:nth-of-type(3) a > img {
     footer .top_ft > ul > li > .txt {
         margin-top: 30px;
         font-size: 16px;
+        display: none;
     }
     
     footer .top_ft > ul > li > .txt > .import > a {

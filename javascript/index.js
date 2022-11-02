@@ -221,3 +221,15 @@ function Sixth() {
 }
 
 window.addEventListener('load',Sixth);
+
+/* =================footer============== */
+
+let num2 = 0;
+$('.top_ft li').on('click',function(){
+    let idx2 = $(this).index();
+    if(num2 != idx2) {
+        $('.top_ft .txt').slideUp();
+    }
+    $(this).find('.txt').slideToggle();
+    num2=idx2
+});

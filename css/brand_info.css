@@ -1277,7 +1277,7 @@ footer .top_ft > ul {
 }
 
 footer .top_ft > ul > li {
-    
+    margin: 50px 0;
 }
 
 footer .top_ft > ul > li > strong {
@@ -1287,6 +1287,7 @@ footer .top_ft > ul > li > strong {
 footer .top_ft > ul > li > .txt {
     margin-top: 30px;
     font-size: 16px;
+    display: none;
 }
 
 footer .top_ft > ul > li > .txt > .import > a {
