@@ -49,9 +49,12 @@ function Menu(){
     let offset = [];
 
     elMenu.forEach((ele)=>{
-        offset.push(ele.offsetTop - window.innerHeight * 0.9)
+        offset.push(ele.offsetTop - window.innerHeight * 0.8)
     })
-    window.addEventListener('scroll',function(){
+
+    console.log(offset)
+    
+    $(window).on('scroll',function(){
         sd.y = window.pageYOffset;
         sd.state = (sd.y > sd.y2) ? true : false;
         sd.y2 = sd.y;
@@ -70,5 +73,12 @@ function Menu(){
             })
         }
     })
+    elMenu.forEach((ele,idx)=>{
+        if(window.pageYOffset > offset[idx]) {
+            elMenu[idx].classList.add('active')
+        }
+    })
+    
+    $(window).trigger('scroll'); /* 중요!! */
 }
 window.addEventListener('load',Menu)
