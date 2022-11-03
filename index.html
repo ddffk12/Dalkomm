@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="./css/mainpage.css">
     <script defer src="./javascript/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
@@ -52,36 +54,31 @@
     </header>
 
     <main>
-        <div class="fade">
-            <div class="first">
-                <figure>
+        <div class="swiper fade">
+            <div class="swiper-wrapper">
+                <figure class="swiper-slide">
                     <img src="./img/img01.jpg" alt="">
                     <div class="mentbox">
                         <p>Special Gift Set<br>고마움을 전하는 기쁨</p>
                         <a href="#">자세히 보기</a>
                     </div>
                 </figure>
-                <figure>
+                <figure class="swiper-slide">
                     <img src="./img/img02.jpg" alt="">
                     <div class="mentbox">
                         <p>가을 신메뉴 출시!<br>가을 밤 사과같이 둥근 달</p>
                         <a href="#">자세히 보기</a>
                     </div>
                 </figure>
-                <figure>
+                <figure class="swiper-slide">
                         <img src="./img/img03.jpg" alt="">
                         <div class="mentbox">
                             <p>테이블오더로 주문하고 공연보러 가자!<br>전세계가 열광한 푸에르자 부르타 공연</p>
                             <a href="#">자세히 보기</a>
                         </div>
                 </figure>
-                
-                <div class="fade-btn">
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
 
         <div class="second">
