@@ -32,6 +32,17 @@ function Header() {
 
 window.addEventListener('load',Header);
 
+let num3 = 0;
+$('.nav > li').on('click',function(){
+    let idx2 = $(this).index();
+    if(num3 != idx2) {
+        $('.nav > li > ul').slideUp();
+    }
+    $(this).find('ul').slideToggle();
+    num3=idx2
+});
+
+
 /* ====================first==================== */
 
 let num = 0, inter, fadeFun;
@@ -79,7 +90,6 @@ $('.fade-btn button').on('click', function(){
         fadeFun('마지막');
     }
 });
-
 /* ===================second================== */
 
 function loading(){
@@ -132,31 +142,37 @@ window.addEventListener('load',loading);
 /* =================third================= */
 
 function Third() {
-    const elThirdUl = document.querySelector('.third ul');
+    const elThirdUl = document.querySelectorAll('.third li');
     let sd = {y:0, y2:0, state:true}
-    let offset3;
+    let offset3 = [];
 
-    offset3 = elThirdUl.offsetTop - window.innerHeight * 0.9;
+    elThirdUl.forEach((ele)=>{
+        offset3.push(ele.offsetTop - window.innerHeight * 0.9);
+    })
 
     window.addEventListener('scroll',function(){
         sd.y = window.pageYOffset     
         sd.state = (sd.y > sd.y2) ?  true : false;
         sd.y2 = sd.y;
         if(sd.state) {
-            if(window.pageYOffset > offset3) {
-                elThirdUl.classList.add('active')
-            }
+            elThirdUl.forEach((ele,idx)=>{
+                if(window.pageYOffset > offset3[idx]) {
+                    elThirdUl[idx].classList.add('active')
+                }
+            })
         }
         else {
-            if(window.pageYOffset < offset3) {
-                elThirdUl.classList.remove('active')
-            }
+            elThirdUl.forEach((ele,idx)=>{
+                if(window.pageYOffset < offset3[idx]) {
+                    elThirdUl[idx].classList.remove('active')
+                }
+            })
         }
     })
 }
 window.addEventListener('load', Third)
 
-/* forth */
+/* =============== forth ================*/
 
 /* ==============fifth============ */
 
@@ -186,6 +202,31 @@ function Fifth() {
 
 window.addEventListener('load',Fifth);
 
+function FifthImage() {
+    const FifthUl = document.querySelector('.fifth ul');
+    const Fifth = document.querySelector('.fifth');
+    let sd = {y:0, y2:0, state:true}
+    let offset6;
+
+    offset6 = (FifthUl.offsetTop + Fifth.offsetTop) - window.innerHeight * 0.5;
+
+    window.addEventListener('scroll',function(){
+        sd.y = window.pageYOffset
+        sd.state = (sd.y > sd.y2) ? true : false;
+        sd.y2 = sd.y;
+        if(sd.state) {
+            if(this.window.pageYOffset > offset6){
+                FifthUl.classList.add('active')
+            }
+        }
+        else {
+            if(this.window.pageYOffset < offset6){
+                FifthUl.classList.remove('active')
+            }
+        }
+    })
+}
+window.addEventListener('load',FifthImage)
 
 /* =============sixth================ */
 
@@ -221,6 +262,7 @@ function Sixth() {
 }
 
 window.addEventListener('load',Sixth);
+
 
 /* =================footer============== */
 

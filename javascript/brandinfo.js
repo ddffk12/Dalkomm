@@ -32,6 +32,18 @@ function Header() {
 
 window.addEventListener('load',Header);
 
+let num3 = 0;
+$('.nav > li').on('click',function(){
+    let idx2 = $(this).index();
+    if(num3 != idx2) {
+        $('.nav > li > ul').slideUp();
+    }
+    $(this).find('ul').slideToggle();
+    num3=idx2
+});
+
+
+
 /* =======bar====== */
 
 const elBar = document.querySelector('main .bar');
