@@ -230,7 +230,7 @@ main .menu li {
     margin-left: 4.3%;
     margin-top: 30px;
     opacity: 0;
-    transform: translateY(300%);
+    transform: translateY(10%);
     transition: 1s;
 }
 
